@@ -1,23 +1,11 @@
 import dash_core_components as dcc
 import dash_html_components as html
 import dash
-from dash.dependencies import Input, Output, State
-from sqlalchemy import Table, create_engine, update, select
-from sqlalchemy.sql import select
-from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import generate_password_hash, check_password_hash
-import sqlite3
-import warnings
-import os
-from flask_login import login_user, logout_user, current_user, LoginManager, UserMixin
-import configparser
-from paypalcheckoutsdk.core import PayPalHttpClient, SandboxEnvironment
-from config import client_id, client_secret, plan_id
-
 import dash_bootstrap_components as dbc
-import requests
-import json
+
+
 button = html.Div([dbc.Button("subscribe", id="sub-button", className="mr-2")])
+
 def create_user():
     create = html.Div([ html.H1('Create User Account')
             , dcc.Location(id='create_user', refresh=True)
